@@ -14,14 +14,23 @@
 
 import java.util.Objects;
 
-class Items {
+class Items
+{
     private String brand;
     private String model;
     private double price;
     private String color;
 
-    public Items(String brand, String model, double price, String color) {
-        if (brand == null || model == null || color == null || brand.isEmpty() || model.isEmpty() || color.isEmpty() || price <= 0) {
+    public Items(String brand, String model, double price, String color)
+    {
+        if (brand == null
+                || model == null
+                || color == null
+                || brand.isEmpty()
+                || model.isEmpty()
+                || color.isEmpty()
+                || price <= 0)
+        {
             throw new IllegalArgumentException("Invalid arguments for household item");
         }
         this.brand = brand;
@@ -30,37 +39,47 @@ class Items {
         this.color = color;
     }
 
-    public String getBrand() {
+    public String getBrand()
+    {
         return brand;
     }
 
-    public String getModel() {
+    public String getModel()
+    {
         return model;
     }
 
-    public double getPrice() {
+    public double getPrice()
+    {
         return price;
     }
 
-    public String getColor() {
+    public String getColor()
+    {
         return color;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Brand: " + brand + ", Model: " + model + ", Price: $" + price + ", Color: " + color;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Items that = (Items) o;
-        return Double.compare(that.price, price) == 0 && Objects.equals(brand, that.brand) && Objects.equals(model, that.model) && Objects.equals(color, that.color);
+        return Double.compare(that.price, price) == 0
+                && Objects.equals(brand, that.brand)
+                && Objects.equals(model, that.model)
+                && Objects.equals(color, that.color);
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(brand, model, price, color);
     }
 }

@@ -9,8 +9,10 @@
  * @version 1.0
  */
 
-public class ItemDriver {
-    public static void main(String[] args) {
+public class ItemDriver
+{
+    public static void main(String[] args)
+    {
         // Create instances of household items
         Television tv = new Television("Samsung", "Smart TV", 799.99, "Black", 55, "4K", true);
         Refrigerator fridge = new Refrigerator("LG", "French Door Fridge", 1499.99, "Stainless Steel", 600, 3, "Frost-Free");
